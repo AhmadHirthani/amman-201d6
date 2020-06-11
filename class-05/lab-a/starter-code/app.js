@@ -31,6 +31,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+    var mul=a+b;
+    var result=[mul,'The product of '+a+ ' and '+b+' is ' +mul +'.'];
+    console.log(result);
+    return result;
 
 }
 
