@@ -95,12 +95,15 @@ document.getElementById("catalog").addEventListener("submit", function (event) {
   //event.target().value;
   var selectedItem = document.getElementById("items");
   var selectedProductName = selectedItem.options[selectedItem.selectedIndex].value;  
+  
+if(selectedQuantity){
   localStorage.setItem(selectedProductName,selectedQuantity);
-
-
   var divlistItem=document.createElement('li');
   divlistItem.textContent=selectedProductName+'............................'+selectedQuantity;
   divList.appendChild(divlistItem);
+}
+
+  
 
 
 });
