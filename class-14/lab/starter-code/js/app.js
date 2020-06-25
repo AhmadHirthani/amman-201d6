@@ -104,7 +104,7 @@ document.getElementById("catalog").addEventListener("submit", function (event) {
 
 
 });
-
+// localStorage.clear();
 
 catalogRender()
 
@@ -115,14 +115,23 @@ function catalogRender(){
 for(var i=0;i<localStorage.length;i++){
   var key=localStorage.key(i);
   var value=localStorage.getItem(key);
-  console.log('key: ',key);
-  console.log('value: ',value);
+  // console.log('key: ',key);
+  // console.log('value: ',value);
   var divlistItem=document.createElement('li');
 divlistItem.textContent=key+'............................'+value;
 divList.appendChild(divlistItem);
 }
 
 }
+
+
+// var back = document.getElementsByTagName('body');
+// var div = document.createElement('div');
+// var cloud = document.createElement('img');
+// cloud.id('cloud');
+// cloud.src("cloud2.jpg");
+// div.appendChild(cloud);
+// back.appendChild(div);
 
 
 
