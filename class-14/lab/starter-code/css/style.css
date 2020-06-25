@@ -104,7 +104,7 @@ tbody{position: absolute;
 
 } */
 
-li{
+#cartContents li{
     color:black;
     animation-timing-function: linear;
     animation-name:check;
