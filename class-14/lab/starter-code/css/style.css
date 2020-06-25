@@ -94,7 +94,7 @@ tbody{position: absolute;
     left: 39%;
     overflow-y: scroll;
 }
-body #cloud{
+/* body #cloud{
     opacity: 20%;
     z-index: 100%;
     position: fixed;
@@ -102,4 +102,4 @@ body #cloud{
 
 @keyframes{
 
-}
+} */
