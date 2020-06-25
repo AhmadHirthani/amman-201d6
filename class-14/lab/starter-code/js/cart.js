@@ -48,82 +48,37 @@ renderCart();
 
 
 var tbody = document.getElementsByTagName('tbody')[0];
-//console.log('localStorage[0]: ',)
-//console.log('type of tbody: ',typeof tbody)
-
-
-
 var reomveCell;
 
 cartRender()
 
 
 function cartRender() {
-
   for (var i = 0; i < localStorage.length; i++) {
     var key = localStorage.key(i);
     var value = localStorage.getItem(key);
-
-
     var row = document.createElement('tr');
-
     reomveCell = document.createElement('td');
-    var image=document.createElement('img');
-    image.id='deleteIcon';
-    image.src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHAVa2BhzbQFRH8L-FE7Kfkn6unL-E-uNfpg&usqp=CAU';
+    var image = document.createElement('img');
+    image.id = 'deleteIcon';
+    image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHAVa2BhzbQFRH8L-FE7Kfkn6unL-E-uNfpg&usqp=CAU';
     reomveCell.appendChild(image);
-
-
     var keyCell = document.createElement('td');
     var ValueCell = document.createElement('td');
-
-    //reomveCell.textContent='X';
     keyCell.textContent = key;
     ValueCell.textContent = value;
-
     row.appendChild(reomveCell);
     row.appendChild(keyCell);
     row.appendChild(ValueCell);
-
-
-
-
     tbody.appendChild(row);
-
-
   }
 }
 
-document.getElementById("deleteIcon").addEventListener("click", function(e){
-  // alert("cell clicked");
-  // //e.currentTarget
-  // //rowForDelete = ;
-  // //console.log(e.currentTarget.parentNode.parentNode);
-  // var keyForDelete= e.currentTarget.parentNode.parentNode.childNodes[1].textContent;
-  // console.log(keyForDelete);
-  // //tbody.removeChild(e.currentTarget.parentNode.parentNode);
-  // localStorage.removeItem(keyForDelete);
-  
-});
-
-
-// reomveCell.addEventListener("click",function(){
-//     alert("cell clicked");
-//     //localStorage.removeItem('Boots');
-
-// });
-
-//reomveCell = row.insertCell(0);
-
-var cells = tbody.getElementsByTagName("img"); 
-for (var i = 0; i < cells.length; i++) { 
-   cells[i].onclick = function(e){
-
-
-  //console.log(e.currentTarget.parentNode.parentNode);
-  var keyForDelete= e.currentTarget.parentNode.parentNode.childNodes[1].textContent;
-  //console.log(keyForDelete);
-  tbody.removeChild(e.currentTarget.parentNode.parentNode);
-  localStorage.removeItem(keyForDelete);
-}
+var cells = tbody.getElementsByTagName("img");
+for (var i = 0; i < cells.length; i++) {
+  cells[i].onclick = function (e) {
+    var keyForDelete = e.currentTarget.parentNode.parentNode.childNodes[1].textContent;
+    tbody.removeChild(e.currentTarget.parentNode.parentNode);
+    localStorage.removeItem(keyForDelete);
+  }
 }
